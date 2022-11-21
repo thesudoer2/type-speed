@@ -9,11 +9,11 @@
 typedef unsigned short uint2_t;
 
 
-class type_speed
+class game_engine
 {
 public:
-	virtual ~type_speed() = default;
-	type_speed(WINDOW*, const std::string&);
+	virtual ~game_engine() = default;
+	game_engine(WINDOW*, const std::string&);
 
 private:
 	void window_initializer();
