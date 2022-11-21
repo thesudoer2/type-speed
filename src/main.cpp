@@ -1,6 +1,6 @@
 #include <ncurses.h>
 
-#include "type_speed.hpp"
+#include "game_engine.hpp"
 
 using namespace std;
 
@@ -23,7 +23,6 @@ int main()
 	box(win, 0, 0);
 
 	type_speed *ptr = new type_speed(win, str);
-	ptr->start_typing();
 
 	wgetch(win);
 
