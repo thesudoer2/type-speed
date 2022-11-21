@@ -2,7 +2,7 @@
 #include <iterator>
 #include <math.h>
 
-#include "type_speed.hpp"
+#include "game_engine.hpp"
 
 type_speed::type_speed(WINDOW* win, const std::string& input_str)
 {
