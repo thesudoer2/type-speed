@@ -4,17 +4,17 @@
 
 #include "game_engine.hpp"
 
-type_speed::type_speed(WINDOW* win, const std::string& input_str)
+game_engine::game_engine(WINDOW* win, const std::string& input_str)
 {
 	this->win = win;
-	type_speed::window_initializer();
+	game_engine::window_initializer();
 
-	this->input_str = type_speed::word_spliter(input_str);
+	this->input_str = game_engine::word_spliter(input_str);
 
-	type_speed::write_on_the_win();
+	game_engine::write_on_the_win();
 }
 
-void type_speed::window_initializer()
+void game_engine::window_initializer()
 {
 	getmaxyx(this->win, this->max_y, this->max_x);
 
@@ -23,7 +23,7 @@ void type_speed::window_initializer()
 	keypad(this->win, true);
 }
 
-std::vector<std::string> type_speed::word_spliter(const std::string& input_str) const
+std::vector<std::string> game_engine::word_spliter(const std::string& input_str) const
 {
     std::stringstream ss(input_str);
 
@@ -45,7 +45,7 @@ std::vector<std::string> type_speed::word_spliter(const std::string& input_str) 
     return result;
 }
 
-void type_speed::write_on_the_win() const
+void game_engine::write_on_the_win() const
 {
 	start_colors();
 
@@ -75,7 +75,7 @@ void type_speed::write_on_the_win() const
 	}
 }
 
-void type_speed::start_colors() const
+void game_engine::start_colors() const
 {
 	start_color();
 	init_pair(1, COLOR_WHITE, COLOR_BLACK); // initial writing on the win

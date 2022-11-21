@@ -22,7 +22,7 @@ int main()
 
 	box(win, 0, 0);
 
-	type_speed *ptr = new type_speed(win, str);
+	game_engine *ptr = new game_engine(win, str);
 
 	wgetch(win);
 
