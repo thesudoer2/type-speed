@@ -23,6 +23,7 @@ int main()
 	box(win, 0, 0);
 
 	game_engine *ptr = new game_engine(win, str);
+	ptr->start_game();
 
 	wgetch(win);
 

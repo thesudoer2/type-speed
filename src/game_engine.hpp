@@ -15,6 +15,11 @@ public:
 	virtual ~game_engine() = default;
 	game_engine(WINDOW*, const std::string&);
 
+	// the following function will take input from user and
+	// evaluate the input. finally this function returns
+	// number of user's wrong inputs.
+	uint2_t start_game() const;
+
 private:
 	void window_initializer();
 	
