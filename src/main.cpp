@@ -7,10 +7,12 @@ using namespace std;
 int main()
 {
 	int max_y, max_x;
+	unsigned int mistakes;
+	unsigned long long duration_time;
 
 	/////////////////////////// FOR TESTING ///////////////////////////////////////
     string str = "   Hello World    this is a testing \n\n\n\n for this  \t\t\t project, this is a testing for writing words on the given board and testing its functionality and so and so and so";
-	////////////////////////// END OF TESTING ////////////////////////////////////	
+	////////////////////////// END OF TESTING ////////////////////////////////////
 
 	initscr();
 	noecho();
@@ -23,7 +25,8 @@ int main()
 	box(win, 0, 0);
 
 	game_engine *ptr = new game_engine(win, str);
-	ptr->start_game();
+	mistakes = ptr->start_game();
+	duration_time = ptr->get_duration_time_millisec();
 
 	wgetch(win);
 
