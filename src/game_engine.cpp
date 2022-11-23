@@ -1,6 +1,6 @@
 #include <sstream>
-#include <iterator>
-#include <math.h>
+#include <iterator> // istream_iterator
+#include <math.h>   // abs()
 
 #include "game_engine.hpp"
 
@@ -12,6 +12,15 @@ game_engine::game_engine(WINDOW* win, const std::string& input_str)
 	this->input_str = game_engine::word_spliter(input_str);
 
 	game_engine::write_on_the_win();
+
+
+	/* ============timer object================ */
+	this->tm = new timer;
+}
+
+game_engine::~game_engine()
+{
+	delete this->tm;
 }
 
 void game_engine::window_initializer()
@@ -121,6 +130,7 @@ uint2_t game_engine::start_game() const
 		{
 			ch = str[j];
 
+// LABLE
 BACKSPACE_PRESSED:
 			// current character
 			wattron(this->win, current_char);
@@ -181,4 +191,10 @@ BACKSPACE_PRESSED:
 	}
 
 	return wrong_input_counter;
+}
+
+unsigned long long game_engine::get_duration_time_millisec() const
+{
+	this->tm->set_end_game();
+	return this->tm->get_duration_time_millisec();
 }
